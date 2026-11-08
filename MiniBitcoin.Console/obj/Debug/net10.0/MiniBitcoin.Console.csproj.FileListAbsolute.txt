@@ -1,0 +1,14 @@
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/bin/Debug/net10.0/MiniBitcoin.Console
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/bin/Debug/net10.0/MiniBitcoin.Console.deps.json
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/bin/Debug/net10.0/MiniBitcoin.Console.runtimeconfig.json
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/bin/Debug/net10.0/MiniBitcoin.Console.dll
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/bin/Debug/net10.0/MiniBitcoin.Console.pdb
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/obj/Debug/net10.0/MiniBitcoin.Console.GeneratedMSBuildEditorConfig.editorconfig
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/obj/Debug/net10.0/MiniBitcoin.Console.AssemblyInfoInputs.cache
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/obj/Debug/net10.0/MiniBitcoin.Console.AssemblyInfo.cs
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/obj/Debug/net10.0/MiniBitcoin.Console.csproj.CoreCompileInputs.cache
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/obj/Debug/net10.0/MiniBitcoin.Console.dll
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/obj/Debug/net10.0/refint/MiniBitcoin.Console.dll
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/obj/Debug/net10.0/MiniBitcoin.Console.pdb
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/obj/Debug/net10.0/MiniBitcoin.Console.genruntimeconfig.cache
+/home/zille/Downloads/MiniBitcoin/MiniBitcoin.Console/obj/Debug/net10.0/ref/MiniBitcoin.Console.dll
