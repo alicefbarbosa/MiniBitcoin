@@ -2,6 +2,8 @@ namespace MiniBitcoin.Console;
 
 public class ServicoTransacao
 {
+    public Extrato Extrato { get; } = new();
+
     public void ComprarBitcoin(
         Carteira carteira,
         decimal valorBrl,
@@ -17,6 +19,12 @@ public class ServicoTransacao
 
         carteira.DebitarBrl(valorBrl);
         carteira.CreditarBitcoin(quantidadeBitcoin);
+
+        Extrato.RegistrarCompra(
+            quantidadeBitcoin,
+            valorBrl,
+            cotacao
+        );
     }
 
     public void VenderBitcoin(
@@ -34,5 +42,11 @@ public class ServicoTransacao
 
         carteira.DebitarBitcoin(quantidadeBitcoin);
         carteira.CreditarBrl(valorBrl);
+
+        Extrato.RegistrarVenda(
+            quantidadeBitcoin,
+            valorBrl,
+            cotacao
+        );
     }
 }
