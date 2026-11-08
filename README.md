@@ -73,4 +73,5 @@ A cotação do Bitcoin utilizada na aplicação é simulada, não representando 
 
 ## Autora
 Alice Fernandes Barbosa - 326128348
+
 Desenvolvido como atividade acadêmica da disciplina de Gestão e Qualidade de Software.
