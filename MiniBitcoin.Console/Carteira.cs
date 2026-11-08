@@ -3,43 +3,27 @@ namespace MiniBitcoin.Console;
 public class Carteira
 {
     public decimal SaldoBrl { get; private set; }
-
     public decimal SaldoBitcoin { get; private set; }
 
-    public Carteira(decimal saldoBrlInicial, decimal saldoBitcoinInicial)
+    public Carteira(decimal saldoBrl, decimal saldoBitcoin)
     {
-        if (saldoBrlInicial < 0)
-        {
-            throw new ArgumentOutOfRangeException(
-                nameof(saldoBrlInicial),
-                "O saldo em reais não pode ser negativo.");
-        }
+        if (saldoBrl < 0)
+            throw new ArgumentOutOfRangeException(nameof(saldoBrl));
 
-        if (saldoBitcoinInicial < 0)
-        {
-            throw new ArgumentOutOfRangeException(
-                nameof(saldoBitcoinInicial),
-                "O saldo em Bitcoin não pode ser negativo.");
-        }
+        if (saldoBitcoin < 0)
+            throw new ArgumentOutOfRangeException(nameof(saldoBitcoin));
 
-        SaldoBrl = saldoBrlInicial;
-        SaldoBitcoin = saldoBitcoinInicial;
+        SaldoBrl = saldoBrl;
+        SaldoBitcoin = saldoBitcoin;
     }
 
     public void DebitarBrl(decimal valor)
     {
         if (valor <= 0)
-        {
-            throw new ArgumentOutOfRangeException(
-                nameof(valor),
-                "O valor do débito deve ser maior que zero.");
-        }
+            throw new ArgumentOutOfRangeException(nameof(valor));
 
         if (valor > SaldoBrl)
-        {
-            throw new InvalidOperationException(
-                "Saldo em reais insuficiente.");
-        }
+            throw new InvalidOperationException("Saldo em reais insuficiente.");
 
         SaldoBrl -= valor;
     }
@@ -47,18 +31,27 @@ public class Carteira
     public void DebitarBitcoin(decimal quantidade)
     {
         if (quantidade <= 0)
-        {
-            throw new ArgumentOutOfRangeException(
-                nameof(quantidade),
-                "A quantidade deve ser maior que zero.");
-        }
+            throw new ArgumentOutOfRangeException(nameof(quantidade));
 
         if (quantidade > SaldoBitcoin)
-        {
-            throw new InvalidOperationException(
-                "Saldo em Bitcoin insuficiente.");
-        }
+            throw new InvalidOperationException("Saldo em Bitcoin insuficiente.");
 
         SaldoBitcoin -= quantidade;
+    }
+
+    public void CreditarBrl(decimal valor)
+    {
+        if (valor <= 0)
+            throw new ArgumentOutOfRangeException(nameof(valor));
+
+        SaldoBrl += valor;
+    }
+
+    public void CreditarBitcoin(decimal quantidade)
+    {
+        if (quantidade <= 0)
+            throw new ArgumentOutOfRangeException(nameof(quantidade));
+
+        SaldoBitcoin += quantidade;
     }
 }

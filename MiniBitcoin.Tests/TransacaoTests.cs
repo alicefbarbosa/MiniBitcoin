@@ -7,14 +7,11 @@ public class TransacaoTests
     [Fact]
     public void DeveComprarBitcoinComSaldoBrlDisponivel()
     {
-        // Arrange
         var carteira = new Carteira(1000m, 0m);
         var transacao = new ServicoTransacao();
 
-        // Act
         transacao.ComprarBitcoin(carteira, 500m, 100000m);
 
-        // Assert
         Assert.Equal(500m, carteira.SaldoBrl);
         Assert.Equal(0.005m, carteira.SaldoBitcoin);
     }
@@ -22,13 +19,13 @@ public class TransacaoTests
     [Fact]
     public void NaoDeveComprarBitcoinComSaldoBrlInsuficiente()
     {
-        // Arrange
         var carteira = new Carteira(100m, 0m);
         var transacao = new ServicoTransacao();
 
-        // Act e Assert
         Assert.Throws<InvalidOperationException>(() =>
-            transacao.ComprarBitcoin(carteira, 200m, 100000m));
+        {
+            transacao.ComprarBitcoin(carteira, 200m, 100000m);
+        });
 
         Assert.Equal(100m, carteira.SaldoBrl);
         Assert.Equal(0m, carteira.SaldoBitcoin);
@@ -41,23 +38,24 @@ public class TransacaoTests
         var transacao = new ServicoTransacao();
 
         Assert.Throws<ArgumentOutOfRangeException>(() =>
-            transacao.ComprarBitcoin(carteira, 0m, 100000m));
+        {
+            transacao.ComprarBitcoin(carteira, 0m, 100000m);
+        });
 
         Assert.Throws<ArgumentOutOfRangeException>(() =>
-            transacao.ComprarBitcoin(carteira, 100m, 0m));
+        {
+            transacao.ComprarBitcoin(carteira, 100m, 0m);
+        });
     }
 
     [Fact]
     public void DeveVenderBitcoinComSaldoDisponivel()
     {
-        // Arrange
         var carteira = new Carteira(0m, 0.01m);
         var transacao = new ServicoTransacao();
 
-        // Act
         transacao.VenderBitcoin(carteira, 0.005m, 100000m);
 
-        // Assert
         Assert.Equal(500m, carteira.SaldoBrl);
         Assert.Equal(0.005m, carteira.SaldoBitcoin);
     }
@@ -65,13 +63,13 @@ public class TransacaoTests
     [Fact]
     public void NaoDeveVenderBitcoinComSaldoInsuficiente()
     {
-        // Arrange
         var carteira = new Carteira(0m, 0.001m);
         var transacao = new ServicoTransacao();
 
-        // Act e Assert
         Assert.Throws<InvalidOperationException>(() =>
-            transacao.VenderBitcoin(carteira, 0.01m, 100000m));
+        {
+            transacao.VenderBitcoin(carteira, 0.01m, 100000m);
+        });
 
         Assert.Equal(0m, carteira.SaldoBrl);
         Assert.Equal(0.001m, carteira.SaldoBitcoin);
@@ -84,9 +82,13 @@ public class TransacaoTests
         var transacao = new ServicoTransacao();
 
         Assert.Throws<ArgumentOutOfRangeException>(() =>
-            transacao.VenderBitcoin(carteira, 0m, 100000m));
+        {
+            transacao.VenderBitcoin(carteira, 0m, 100000m);
+        });
 
         Assert.Throws<ArgumentOutOfRangeException>(() =>
-            transacao.VenderBitcoin(carteira, 0.001m, 0m));
+        {
+            transacao.VenderBitcoin(carteira, 0.001m, 0m);
+        });
     }
 }
